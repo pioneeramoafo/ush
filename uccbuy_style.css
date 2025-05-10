@@ -1,0 +1,1322 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Keep Poppins for general text */
+}
+
+/* Body background and text color (matching site dark mode - default) */
+body {
+    background-color: rgb(46, 44, 65); /* Dark background */
+    color: whitesmoke; /* Default text color */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition placeholder */
+}
+
+/* Header styles (matching site dark header - default) */
+header {
+    padding: 20px 0;
+    background-color: rgb(46, 44, 65); /* Dark background */
+    box-shadow: 0 4px 6px -6px deepskyblue; /* Matching site header shadow */
+    transition: background-color 0.5s ease; /* Smooth transition placeholder */
+    position: relative; /* Needed for absolute positioning of dropdowns */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+/* Heading class for header content */
+.heading-class{
+    background-color: rgb(46, 44, 65);
+    height: 10vh; /* Adjusted height */
+    align-items: center;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between; /* Changed to space-between */
+    padding: 0 20px; /* Added padding */
+    transition: background-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+/* Logo styles */
+.logo {
+    font-family: 'Exo 2', sans-serif; /* Matching site logo font */
+    font-size: 2rem; /* Adjusted size */
+    font-weight: 800;
+    color: transparent; /* For gradient text */
+    background-image: linear-gradient(to right, purple, deepskyblue); /* Matching site logo gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* Header icons container */
+.header-icons {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align items */
+}
+
+/* Header icon styles */
+.header-icons i{
+    color: whitesmoke;
+    font-size: 15pt;
+    margin-left: 20px; /* Use margin-left for spacing */
+    transition: all 0.6s;
+    cursor: pointer; /* Ensure icons have pointer cursor */
+}
+
+/* Header icon hover effect */
+.header-icons i:hover{
+    color: deepskyblue;
+}
+
+/* Sell button styles */
+.sell{
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue);
+    height: 6vh;
+    color: white;
+    width: 80px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    border: none;
+    font-size: 12pt;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px; /* Add some space between icons and button */
+    display: block; /* Show button by default */
+}
+
+/* Sell icon style (for mobile) */
+.sell-icon {
+    display: none; /* Hide icon by default */
+    color: whitesmoke;
+    font-size: 15pt;
+    margin-left: 20px;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+
+/* Sell icon hover effect */
+.sell-icon:hover {
+     color: deepskyblue;
+}
+
+/* H2 heading style */
+h2{
+    margin-left: 25px;
+    margin-top: 20px; /* Adjusted margin-top */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(36, 34, 55);
+    display: flex; /* Keep flex display */
+    align-items: center;
+    height: 5vh;
+    padding: 0 20px; /* Add padding */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+     transition: background-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.navbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navbar link styles */
+.navbar a {
+    text-decoration: none;
+    color: darkgray;
+    margin-right: 20px; /* Use margin-right for spacing */
+    font-weight: 400;
+    font-family: 'Exo 2', sans-serif;
+    transition: all 0.5s;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent links from shrinking */
+}
+
+/* No margin on the last navbar link */
+.navbar a:last-child {
+    margin-right: 0;
+}
+
+/* Navbar link hover effect */
+.navbar a:hover {
+    color: deepskyblue;
+}
+
+/* CSS for the selected navbar link */
+.navbar a.selected {
+    color: deepskyblue;
+    font-weight: 700;
+}
+
+/* Styles for the search bar container */
+.search-bar-container {
+    background-color: rgb(36, 34, 55); /* Slightly darker background */
+    padding: 0 0; /* Start with 0 padding */
+    overflow: hidden; /* Hide content when collapsed */
+    max-height: 0; /* Start collapsed */
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, background-color 0.5s ease; /* Smooth transition */
+    border-bottom: 1px solid transparent; /* Start with transparent border */
+    z-index: 999; /* Ensure search bar is below header but above main content */
+    position: relative; /* Needed for z-index to work */
+}
+
+/* Active search bar container */
+.search-bar-container.active {
+    max-height: 60px; /* Adjust based on content height */
+    padding: 10px 0; /* Expand padding when active */
+    border-bottom-color: #444; /* Show border when active */
+}
+
+/* Styles for the search bar content (input, button, and icon) within the container */
+.search-bar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Search input field */
+.search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid deepskyblue;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Exo 2', sans-serif;
+    background-color: rgb(46, 44, 65);
+    color: whitesmoke;
+    margin-right: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    outline: none;
+}
+
+/* Search input placeholder color */
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* Style for the new search button */
+.search-button {
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Exo 2', sans-serif;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Search button hover effect */
+.search-button:hover {
+    opacity: 0.9;
+}
+
+/* Close search icon */
+.close-search {
+     color: whitesmoke !important;
+     font-size: 1.2em !important;
+     cursor: pointer;
+}
+
+/* Close search icon hover effect */
+.close-search:hover {
+    color: deepskyblue !important;
+}
+
+/* Account Dropdown Styles */
+.account-dropdown {
+    position: absolute;
+    top: 10vh;
+    right: 20px;
+    background-color: rgb(36, 34, 55);
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1001;
+    transition: background-color 0.5s ease;
+}
+
+/* Active account dropdown */
+.account-dropdown.active {
+    display: block;
+}
+
+/* Account dropdown list */
+.account-dropdown ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* Account dropdown list item */
+.account-dropdown ul li {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Account dropdown list item hover effect */
+.account-dropdown ul li:hover {
+    background-color: rgb(46, 44, 65);
+}
+
+/* Account dropdown link */
+.account-dropdown ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9em;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: rgb(36, 34, 55);
+    color: darkgray;
+    padding: 40px 20px;
+    font-family: 'Exo 2', sans-serif;
+    margin-top: 50px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Footer container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Footer section */
+.footer-section {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Footer section heading */
+.footer-section h4 {
+    color: whitesmoke;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    transition: color 0.5s ease, border-bottom-color 0.5s ease;
+}
+
+/* Footer section paragraph */
+.footer-section p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+/* Footer section list */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Footer section list item */
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer section link */
+.footer-section ul li a {
+    color: darkgray;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Footer section link hover effect */
+.footer-section ul li a:hover {
+    color: deepskyblue;
+}
+
+/* Social icons container */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Social icon link */
+.social-icons a {
+    color: darkgray;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+/* Social icon link hover effect */
+.social-icons a:hover {
+    color: deepskyblue;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+    color: #aaa;
+    transition: color 0.5s ease, border-top-color 0.5s ease;
+}
+
+/* Responsive adjustments for footer */
+@media (min-width: 768px) {
+    .footer-section {
+        width: 30%;
+    }
+    .footer-container {
+        justify-content: space-around;
+    }
+    .sell {
+        display: block;
+    }
+    .sell-icon {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-section {
+        width: 20%;
+    }
+}
+
+/* --- Mobile Responsiveness for Navbar --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        height: 5vh;
+        padding: 0 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .navbar a {
+        text-decoration: none; /* Ensure no underline on mobile navbar links */
+        margin-right: 20px;
+        margin-bottom: 0;
+        width: auto;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+     .navbar-links {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin-top: 0;
+     }
+
+    .sell {
+        display: none;
+    }
+    .sell-icon {
+        display: block;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Advert Container Styles (Carousel) */
+.advert-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: rgb(36, 34, 55);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.advert-slide {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    color: darkgray;
+    font-size: 1.5em;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.advert-slide.active {
+    opacity: 1;
+    position: static;
+}
+
+/* Popular Ads Container (Grid) */
+.popular-ads-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Individual Ad Card Styles */
+.ad-card {
+    background-color: rgb(36, 34, 55);
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Default to column layout */
+    transition: transform 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    height: 300px; /* Reduced fixed height for the ad cards */
+}
+
+.ad-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Remove underline from ad card links */
+.ad-card-link {
+    text-decoration: none;
+}
+
+
+.ad-card .image-placeholder {
+    width: 100%;
+    height: 180px; /* Fixed height for the placeholder container - kept same */
+    background-color: rgb(46, 44, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgray;
+    font-size: 1em;
+    border-bottom: 1px solid #444;
+    overflow: hidden; /* Hide overflowing image parts */
+    transition: background-color 0.5s ease, border-bottom-color 0.5s ease, color 0.5s ease;
+}
+
+/* Style for images within the image-placeholder containers */
+.ad-card .image-placeholder img {
+    display: block; /* Remove extra space below the image */
+    width: 100%; /* Make the image fill the width of its container */
+    height: 100%; /* Make the image fill the height of its container */
+    object-fit: cover; /* This is the key: crops the image to fit the container while maintaining aspect ratio */
+}
+
+
+.ad-card .card-content {
+    padding: 8px; /* Reduced padding */
+    flex-grow: 1;
+    overflow: hidden; /* Hide overflowing text */
+}
+
+.ad-card .card-content .price-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ad-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: deepskyblue;
+    transition: color 0.5s ease;
+    overflow: hidden; /* Hide overflowing title text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing title */
+    white-space: nowrap; /* Prevent title from wrapping */
+}
+
+.ad-card .card-content p {
+    margin: 0;
+    font-size: 0.9em;
+    color: darkgray;
+    transition: color 0.5s ease;
+    overflow: hidden; /* Hide overflowing paragraph text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    display: -webkit-box; /* For multi-line ellipsis */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+
+/* Premium Badge Styles */
+.premium-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: deepskyblue;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.premium-badge i {
+    margin-right: 4px;
+    font-size: 1em;
+}
+
+/* Store Button Styles */
+.store-button {
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: opacity 0.3s ease, background 0.5s ease;
+}
+
+.store-button:hover {
+    opacity: 0.9;
+}
+
+
+/* Toggle Button Styles */
+.theme-toggle {
+    position: absolute;
+    top: 130px; /* Adjusted vertical position */
+    left: 20px; /* On the left side */
+    background-color: rgb(36, 34, 55); /* Dark mode background - default */
+    color: whitesmoke; /* Dark mode text - default */
+    border: 1px solid #444; /* Dark mode border - default */
+    border-radius: 20px; /* Pill shape */
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Vertically align icon and text */
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+    z-index: 1002; /* Ensure it's above header elements */
+    box-shadow: 0 0 8px deepskyblue; /* Added deepskyblue box shadow */
+}
+
+.theme-toggle:hover {
+    opacity: 0.9;
+}
+
+.theme-toggle i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Hide text in the toggle button by default */
+.theme-toggle span {
+    display: inline-block;
+}
+
+
+/* Responsive adjustments for cards */
+@media (max-width: 768px) {
+     h2 {
+        font-size: 1.2em;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+     .ad-card .image-placeholder {
+        height: 200px; /* Adjust height for tablet */
+     }
+     .ad-card {
+        height: 330px; /* Adjusted fixed height for tablet */
+     }
+}
+
+ @media (max-width: 480px) {
+     .popular-ads-container {
+        display: grid; /* Keep grid */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Keep grid columns */
+        gap: 5px; /* Keep gap */
+        max-width: 1200px; /* Keep max-width */
+        margin: 5px 0; /* Adjusted margin to only apply vertically */
+        padding: 0 10px; /* Reduced horizontal padding */
+        box-sizing: border-box; /* Keep box-sizing */
+     }
+     .ad-card {
+        height: 250px; /* Further reduced fixed height for mobile */
+        width: 100%; /* Ensure cards take full width */
+        flex-direction: column; /* Keep column layout */
+        align-items: stretch; /* Keep alignment */
+        padding: 0; /* Keep padding */
+     }
+     .ad-card .image-placeholder {
+        width: 100%; /* Keep width */
+        height: 150px; /* Keep height */
+        flex-shrink: initial; /* Keep flex-shrink */
+        margin-right: 0; /* Keep margin */
+        border-bottom: 1px solid #444; /* Add back the bottom border for stacked layout */
+        border-radius: 8px 8px 0 0; /* Keep border radius */
+     }
+      .ad-card .image-placeholder img {
+        border-radius: 8px 8px 0 0; /* Keep border radius */
+      }
+     .ad-card .card-content {
+        flex-grow: 1; /* Allow content to grow */
+        padding: 8px; /* Reduced padding for mobile */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack content vertically */
+        /* Removed justify-content: space-between; */
+     }
+     .ad-card .card-content .price-button-container {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack price and button vertically */
+        justify-content: flex-start; /* Align items to the start */
+        align-items: flex-start; /* Align items to the start */
+        margin-top: 5px; /* Reduced margin-top */
+        width: 100%; /* Ensure container takes full width */
+     }
+     .ad-card h3 {
+        font-size: 0.9em; /* Keep font size */
+        margin-bottom: 4px; /* Further reduced margin-bottom */
+        /* Ensure title takes necessary space and doesn't overflow prematurely */
+        flex-shrink: 0; /* Prevent title from shrinking */
+        min-height: 1.2em; /* Ensure minimum height for one line of text */
+     }
+     .ad-card .card-content p {
+        font-size: 0.6em; /* Keep font size for description */
+        line-height: 1.4; /* Adjusted line height */
+        margin-bottom: 4px; /* Further reduced margin-bottom */
+        /* Allow description to take remaining space */
+        flex-grow: 1; /* Allow description to grow */
+     }
+     .ad-card .card-content p:last-of-type {
+        margin-top: 0; /* Removed auto margin */
+        margin-bottom: 4px; /* Adjusted margin */
+        font-size: 0.8em; /* Keep font size for price on mobile */
+     }
+      .store-button {
+        padding: 5px 10px; /* Keep padding */
+        font-size: 0.8em; /* Keep font size */
+        align-self: flex-start; /* Align button to the start */
+        width: 100%; /* Make button 100% width on mobile */
+      }
+
+     /* Adjust toggle button position on smaller screens */
+     .theme-toggle {
+        top: 100px;
+        left: 10px;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        justify-content: center;
+     }
+
+     /* Hide the text in the toggle button on small screens */
+     .theme-toggle span {
+        display: none;
+     }
+
+     /* Adjust icon margin for mobile view */
+     .theme-toggle i {
+        margin-right: 0;
+     }
+}
+
+/* --- Styles unique to the Product Detail Page --- */
+.detail-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 20px; /* Add horizontal padding */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.actual-detail{
+    display: flex;
+    flex-direction: row; /* Desktop: image and text side-by-side */
+    border: 1px solid #444; /* Matching site border color */
+    width: 100%;
+    max-width: 1200px; /* Match main content width */
+    background-color: rgb(36, 34, 55); /* Match card background */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within bounds */
+     transition: background-color 0.5s ease, border-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+.product-image{
+    display: flex;
+    flex-direction: column; /* Desktop: main image above further images */
+    width: 500px; /* Set a fixed width for desktop */
+    height: 550px; /* Set a fixed height for desktop */
+    background-color: rgb(46, 44, 65); /* Darker background for image section */
+    padding: 15px; /* Add padding */
+    box-sizing: border-box; /* Include padding in dimensions */
+     transition: background-color 0.5s ease; /* Smooth transition placeholder */
+     gap: 10px; /* Gap between main and further image sections */
+}
+
+.product-text{
+    padding: 15px; /* Adjusted padding */
+    flex: 1; /* Allow text section to grow */
+    display: flex; /* Use flexbox for text content */
+    flex-direction: column; /* Stack text content vertically */
+    justify-content: space-between; /* Distribute space */
+}
+
+.main-image{
+    background-color: rgb(77, 70, 36); /* Placeholder color */
+    flex-grow: 1; /* Allow main image to take most available vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke; /* Placeholder text color */
+    font-size: 1.2em;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+    /* height and width are now controlled by the parent .product-image */
+    width: 100%; /* Ensure it fills the parent width */
+    height: 100%; /* Ensure it fills the parent height */
+}
+
+/* Specific styles for the further-image div */
+.further-image {
+     background-color: rgb(77, 70, 36); /* Placeholder color */
+     flex-shrink: 0; /* Prevent shrinking */
+     display: grid; /* Use grid for horizontal layout */
+     grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Auto-fit columns, min width 0, grow to fill */
+     gap: 10px; /* Gap between thumbnails */
+     /* overflow-x: auto; Removed horizontal scrolling */
+     padding: 10px; /* Add padding */
+     border-radius: 8px; /* Rounded corners */
+     width: 100%; /* Ensure it fills the parent width */
+     height: 100px; /* Fixed height for the thumbnail row on desktop */
+     align-items: center; /* Vertically align thumbnails */
+}
+
+/* Style for individual thumbnail images within further-image */
+.further-image img {
+    display: block;
+    /* width: 80px; Removed fixed width */
+    /* height: 80px; Removed fixed height */
+    object-fit: cover; /* Crop thumbnails to fit */
+    border-radius: 5px; /* Slightly rounded corners for thumbnails */
+    cursor: pointer; /* Indicate clickable */
+    transition: transform 0.2s ease; /* Subtle hover effect */
+    /* flex-shrink: 0; Removed flex-shrink as grid handles this */
+    width: 100%; /* Make image fill grid cell width */
+    height: 100%; /* Make image fill grid cell height */
+}
+
+.further-image img:hover {
+    transform: scale(1.05);
+}
+
+
+.product-text h1{
+    font-size: 2.5em; /* Adjusted font size */
+    margin-bottom: 15px; /* Adjusted margin */
+    color: deepskyblue; /* Title color */
+    background: none; /* Remove gradient from h1 in detail page */
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    color: deepskyblue; /* Ensure color is set */
+     transition: color 0.5s ease; /* Smooth transition placeholder */
+}
+
+.product-text p {
+    font-size: 1.1em; /* Adjusted paragraph font size */
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+    color: darkgray; /* Paragraph text color */
+     transition: color 0.5s ease; /* Smooth transition placeholder */
+}
+
+.product-text p:last-of-type {
+    margin-top: auto; /* Push the last paragraph (price) to the bottom */
+    margin-bottom: 15px; /* Add space above the button */
+     color: whitesmoke; /* Make price stand out */
+     font-size: 1.2em; /* Larger price font */
+}
+
+/* Specific style for the contact seller button */
+.contact-Seller {
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue); /* Matching site button gradient */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px; /* Adjusted padding */
+    font-size: 1em; /* Adjusted font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+}
+
+.contact-Seller:hover {
+    opacity: 0.9;
+}
+
+
+/* --- Removed Light Mode Styles for Product Detail Page --- */
+
+
+/* --- Dashboard Styles --- */
+.dashboard-body {
+    display: flex;
+    flex-direction: column; /* Stack header, dashboard container, and footer */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+.dashboard-container {
+    display: flex;
+    flex-grow: 1; /* Allow dashboard container to take up remaining vertical space */
+    max-width: 1200px; /* Match main content width */
+    margin: 20px auto; /* Center the container and add vertical margin */
+    padding: 0 20px; /* Add horizontal padding */
+    box-sizing: border-box; /* Include padding in width */
+    width: 100%; /* Ensure it takes full width within its container */
+}
+
+.dashboard-sidebar {
+    width: 200px; /* Fixed width for the sidebar */
+    background-color: rgb(36, 34, 55); /* Dark background */
+    border: 1px solid #444; /* Matching site border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    margin-right: 20px; /* Space between sidebar and main content */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+     transition: background-color 0.5s ease, border-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+/* Style for the Back to Shop button */
+.back-to-shop-btn {
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue); /* Matching site gradient */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-bottom: 20px; /* Space below the button */
+    text-align: center; /* Center text */
+    display: block; /* Ensure it takes full width */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.back-to-shop-btn:hover {
+    opacity: 0.9;
+}
+
+
+.dashboard-sidebar h4 {
+    color: whitesmoke;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+     transition: color 0.5s ease, border-bottom-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+.dashboard-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard-sidebar ul li a {
+    color: darkgray;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.dashboard-sidebar ul li a:hover {
+    color: deepskyblue;
+    background-color: rgb(46, 44, 65);
+}
+
+.dashboard-sidebar ul li a.active {
+    color: deepskyblue;
+    font-weight: 700;
+    background-color: rgb(46, 44, 65);
+}
+
+.dashboard-main-content {
+    flex-grow: 1; /* Allow main content to take up remaining width */
+    background-color: rgb(36, 34, 55); /* Dark background */
+    border: 1px solid #444; /* Matching site border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+     transition: background-color 0.5s ease, border-color 0.5s ease; /* Smooth transition placeholder */
+}
+
+.dashboard-main-content iframe {
+    width: 100%;
+    height: 100%; /* Make iframe fill the main content area */
+    border: none; /* Remove iframe border */
+}
+
+/* --- Removed Light Mode Styles for Dashboard --- */
+
+
+/* --- Responsive Styles for Product Detail Page --- */
+@media (max-width: 768px) {
+    .actual-detail {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+
+    .product-image {
+        flex-direction: column; /* Tablet: stack main image above further images */
+        width: 100%; /* Take full width */
+        height: auto; /* Height determined by content */
+        padding: 10px; /* Adjust padding */
+        gap: 10px; /* Gap between main and further image sections */
+    }
+
+    .main-image {
+        flex-grow: 1; /* Allow main image to grow vertically */
+        margin-right: 0; /* Remove horizontal margin */
+        margin-bottom: 0; /* Remove bottom margin */
+        min-height: 250px; /* Minimum height for tablet */
+        width: 100%; /* Ensure full width */
+        height: auto; /* Height determined by content */
+    }
+
+    .further-image {
+        flex-direction: row; /* Keep thumbnails horizontal */
+        width: 100%; /* Ensure full width */
+        height: 80px; /* Fixed height for thumbnail row on tablet */
+        padding: 8px; /* Adjust padding */
+        align-items: center; /* Vertically align thumbnails */
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Auto-fit columns, min width 0, grow to fill */
+        gap: 8px; /* Adjust gap for tablet */
+    }
+
+    .further-image img {
+        /* width: 70px; Removed fixed width */
+        /* height: 70px; Removed fixed height */
+        object-fit: cover; /* Crop thumbnails to fit */
+        border-radius: 5px; /* Slightly rounded corners for thumbnails */
+        cursor: pointer; /* Indicate clickable */
+        transition: transform 0.2s ease; /* Subtle hover effect */
+        /* flex-shrink: 0; Removed flex-shrink as grid handles this */
+        width: 100%; /* Make image fill grid cell width */
+        height: 100%; /* Make image fill grid cell height */
+    }
+
+    .further-image img:hover {
+        transform: scale(1.05);
+    }
+
+    .product-text {
+        flex: none; /* Remove flex grow */
+        width: 100%; /* Take full width */
+        padding: 15px; /* Keep padding */
+    }
+
+    .product-text h1 {
+        font-size: 2em; /* Adjust title font size */
+    }
+
+    .product-text p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+
+    .product-text p:last-of-type {
+        margin-top: 15px; /* Add space above price */
+        margin-bottom: 15px; /* Add space above button */
+    }
+
+    .contact-Seller {
+        align-self: center; /* Center button on smaller screens */
+    }
+
+     .detail-container {
+        padding: 0 10px; /* Adjust horizontal padding on smaller screens */
+     }
+
+     /* --- Responsive Styles for Dashboard (Tablet) --- */
+    .dashboard-container {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+        padding: 0 10px; /* Adjust horizontal padding */
+    }
+
+    .dashboard-sidebar {
+        width: 100%; /* Sidebar takes full width */
+        margin-right: 0; /* Remove horizontal margin */
+        margin-bottom: 20px; /* Add space below sidebar */
+        flex-direction: row; /* Arrange items horizontally */
+         align-items: center; /* Vertically align items */
+         flex-wrap: wrap; /* Allow wrapping if needed */
+    }
+
+     .back-to-shop-btn {
+        width: auto; /* Auto width */
+        margin-right: 15px; /* Space after button */
+        margin-bottom: 0; /* Remove bottom margin */
+     }
+
+    .dashboard-sidebar h4 {
+         margin-bottom: 0; /* Remove bottom margin */
+         margin-right: 15px; /* Space after heading */
+         border-bottom: none; /* Remove border */
+         padding-bottom: 0; /* Remove padding */
+    }
+
+    .dashboard-sidebar ul {
+        display: flex; /* Arrange links horizontally */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent wrapping */
+        padding-bottom: 10px; /* Add padding for scrollbar */
+        scrollbar-width: none; /* Hide scrollbar for Firefox */
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+         flex-grow: 1; /* Allow ul to take available space */
+         align-items: center; /* Vertically align links */
+    }
+
+    .dashboard-sidebar ul::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    }
+
+    .dashboard-sidebar ul li {
+        margin-bottom: 0; /* Remove bottom margin */
+        margin-right: 15px; /* Add space between links */
+        flex-shrink: 0; /* Prevent links from shrinking */
+    }
+
+    .dashboard-sidebar ul li:last-child {
+        margin-right: 0; /* No margin on the last link */
+    }
+
+    .dashboard-sidebar ul li a {
+        padding: 8px 12px; /* Adjust padding for horizontal layout */
+    }
+
+    .dashboard-main-content {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+     .popular-ads-container {
+        display: grid; /* Keep grid */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Keep grid columns */
+        gap: 5px; /* Keep gap */
+        max-width: 1200px; /* Keep max-width */
+        margin: 5px 0; /* Adjusted margin to only apply vertically */
+        padding: 0 10px; /* Reduced horizontal padding */
+        box-sizing: border-box; /* Keep box-sizing */
+     }
+     .ad-card {
+        height: 250px; /* Further reduced fixed height for mobile */
+        width: 100%; /* Ensure cards take full width */
+        flex-direction: column; /* Keep column layout */
+        align-items: stretch; /* Keep alignment */
+        padding: 0; /* Keep padding */
+     }
+     .ad-card .image-placeholder {
+        width: 100%; /* Keep width */
+        height: 150px; /* Keep height */
+        flex-shrink: initial; /* Keep flex-shrink */
+        margin-right: 0; /* Keep margin */
+        border-bottom: 1px solid #444; /* Add back the bottom border for stacked layout */
+        border-radius: 8px 8px 0 0; /* Keep border radius */
+     }
+      .ad-card .image-placeholder img {
+        border-radius: 8px 8px 0 0; /* Keep border radius */
+      }
+     .ad-card .card-content {
+        flex-grow: 1; /* Allow content to grow */
+        padding: 8px; /* Reduced padding for mobile */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack content vertically */
+        /* Removed justify-content: space-between; */
+     }
+     .ad-card .card-content .price-button-container {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack price and button vertically */
+        justify-content: flex-start; /* Align items to the start */
+        align-items: flex-start; /* Align items to the start */
+        margin-top: 5px; /* Reduced margin-top */
+        width: 100%; /* Ensure container takes full width */
+     }
+     .ad-card h3 {
+        font-size: 0.9em; /* Keep font size */
+        margin-bottom: 4px; /* Further reduced margin-bottom */
+        /* Ensure title takes necessary space and doesn't overflow prematurely */
+        flex-shrink: 0; /* Prevent title from shrinking */
+        min-height: 1.2em; /* Ensure minimum height for one line of text */
+     }
+     .ad-card .card-content p {
+        font-size: 0.6em; /* Keep font size for description */
+        line-height: 1.4; /* Adjusted line height */
+        margin-bottom: 4px; /* Further reduced margin-bottom */
+        /* Allow description to take remaining space */
+        flex-grow: 1; /* Allow description to grow */
+     }
+     .ad-card .card-content p:last-of-type {
+        margin-top: 0; /* Removed auto margin */
+        margin-bottom: 4px; /* Adjusted margin */
+        font-size: 0.8em; /* Keep font size for price on mobile */
+     }
+      .store-button {
+        padding: 5px 10px; /* Keep padding */
+        font-size: 0.8em; /* Keep font size */
+        align-self: flex-start; /* Align button to the start */
+        width: 100%; /* Make button 100% width on mobile */
+      }
+
+     /* Adjust toggle button position on smaller screens */
+     .theme-toggle {
+        top: 100px;
+        left: 10px;
+        font-size: 0.8em;
+        padding: 5px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        justify-content: center;
+     }
+
+     /* Hide the text in the toggle button on small screens */
+     .theme-toggle span {
+        display: none;
+     }
+
+     /* Adjust icon margin for mobile view */
+     .theme-toggle i {
+        margin-right: 0;
+     }
+}
+
+/* --- Light Mode Styles --- */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.light-mode header {
+    background-color: #fff;
+    box-shadow: 0 4px 6px -6px lightgray;
+}
+
+ body.light-mode .heading-class {
+    background-color: #fff;
+    border-bottom-color: #ddd;
+ }
+
+ body.light-mode .header-icons i {
+    color: #333;
+ }
+
+ body.light-mode .header-icons i:hover {
+    color: deepskyblue;
+ }
+
+body.light-mode footer {
+    background-color: #eee;
+    color: #555;
+    border-top-color: #ddd;
+}
+
+body.light-mode .footer-section h4 {
+    color: #333;
+    border-bottom-color: #ddd;
+}
+
+body.light-mode .footer-section ul li a {
+    color: #555;
+}
+
+body.light-mode .footer-section ul li a:hover {
+    color: deepskyblue;
+ }
+
+/* Light mode styles for Index page grid and cards */
+body.light-mode .advert-container {
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+body.light-mode .advert-slide {
+    color: #555;
+}
+
+body.light-mode .popular-ads-container {
+    /* No specific background needed as cards have their own */
+}
+
+body.light-mode .ad-card {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+body.light-mode .ad-card .image-placeholder {
+    background-color: #ccc;
+    color: #555;
+    border-bottom-color: #ccc;
+}
+
+body.light-mode .ad-card h3 {
+    color: deepskyblue; /* Keep accent color */
+}
+
+body.light-mode .ad-card .card-content p {
+    color: #555; /* Darker text in light mode */
+}
+
+body.light-mode .premium-badge {
+    background-color: deepskyblue; /* Keep accent color */
+    color: white; /* Keep white text */
+}
+
+body.light-mode .store-button {
+    background: linear-gradient(to right, rgb(173, 106, 173), deepskyblue); /* Keep gradient */
+    color: white; /* Keep white text */
+}
+
+/* Light mode styles for the theme toggle button */
+body.light-mode .theme-toggle {
+    background-color: #fff;
+    color: #333;
+    border-color: #ddd;
+    box-shadow: 0 0 8px lightgray;
+}
+
+body.light-mode .theme-toggle:hover {
+    opacity: 0.9;
+}
