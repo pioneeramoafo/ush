@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Overview</title>
+    <link rel="stylesheet" href="../css/uccbuy_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        /* Add any specific styles for the overview content here if needed */
+        /* Ensure these are NOT theme-dependent */
+        .overview-section {
+            background-color: rgb(46, 44, 65); /* Darker background for content sections */
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+        }
+
+        .overview-section h3 {
+            color: deepskyblue;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+             transition: color 0.5s ease;
+        }
+
+        .overview-section p {
+            color: darkgray;
+            line-height: 1.6;
+             transition: color 0.5s ease;
+        }
+         /* Add any specific styles for the overview content here if needed */
+        /* Ensure these are NOT theme-dependent */
+        .overview-section ul {
+            list-style: disc; /* Example: Add list style */
+            margin-left: 20px; /* Example: Add margin */
+            color: darkgray; /* Example: List item color */
+        }
+        .overview-section ul li {
+            margin-bottom: 5px; /* Example: Space between list items */
+        }
+    </style>
+</head>
+<body class="dashboard-content-body">
+    <div class="overview-section">
+        <h3>Welcome to Your Dashboard!</h3>
+        <p>This is your central hub to manage your activity on Uccbuy. From here, you can view your listings, track orders, manage messages, and update your profile.</p>
+    </div>
+
+    <div class="overview-section">
+        <h3>Quick Stats</h3>
+        <p>Here you would see a summary of your key metrics, such as:</p>
+        <ul>
+            <li>Active Listings: [Number]</li>
+            <li>Pending Orders: [Number]</li>
+            <li>Unread Messages: [Number]</li>
+            <li>Total Sales: [Amount]</li>
+        </ul>
+        <p>*(Note: These are placeholder stats. Connect to your backend to display real data.)*</p>
+    </div>
+
+     <div class="overview-section">
+        <h3>Recent Activity</h3>
+        <p>A feed of your most recent interactions and updates would appear here.</p>
+        <ul>
+            <li>[Date]: New message from User X regarding Listing Y.</li>
+            <li>[Date]: Order #123 status updated to Shipped.</li>
+            <li>[Date]: Your listing "Product Z" received a new view.</li>
+        </ul>
+         <p>*(Note: This is placeholder activity. Connect to your backend to display real data.)*</p>
+    </div>
+
+    <script src="../js/uccbuy_script.js"></script>
+</body>
+</html>
